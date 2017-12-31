@@ -1,7 +1,7 @@
 uploadToRootFolder:
   post:
     operationId: uploadToRootFolder
-    description: Upload files to the root folder
+    description: Upload files to the root folder.
     requestBody:
       $ref: '#components/requestBodies/uploadMultiple'
     responses:
@@ -17,7 +17,7 @@ uploadToFolderById:
         type: string
   post:
     operationId: uploadToFolder
-    description: Upload files to specified folder
+    description: Upload files to the folder whose is id provided in the url.
     requestBody:
       $ref: '#components/requestBodies/uploadMultiple'
     responses:
@@ -26,6 +26,9 @@ uploadToFolderById:
 components:
   requestBodies:
     uploadMultiple:
+      description: >-
+        Array of files to be uploaded; the file name is the 'name' field of the
+        form data.
       content:
         multipart/form-data:
           schema:
@@ -39,7 +42,10 @@ components:
                   format: binary
   responses:
     upload:
-      description: Successfully uploaded files
+      description: >-
+        Array with successfully uploaded files and an object containing upload
+        errors; the name of the file is the key and the error message is the
+        value. Can be an empty object if no errors occurred.
       content:
         application/json:
           schema:
@@ -54,4 +60,4 @@ components:
               uploads:
                 type: array
                 items:
-                  $ref: '/file-bundle-api/openapi/entities.yaml#/file'
+                  $ref: '/file-bundle-api/openapi/schemas.yaml#/file'

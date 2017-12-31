@@ -33,9 +33,8 @@ folder:
     name:
       type: string
     parent:
-      oneOf:
-        - type: string
-        - nullable: true
+      type: string
+      nullable: true
     create_ts:
       type: integer
     created:

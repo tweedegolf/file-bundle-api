@@ -1,8 +1,9 @@
 getMetaData:
   post:
     operationId: getMetaData
-    description: retrieves the metadata of the selected files and folders
+    description: Retrieves the metadata of the selected files and folders.
     requestBody:
+      description: Object containing the ids of the selected files and folders.
       content:
         application/x-www-form-urlencoded:
           schema:
@@ -16,9 +17,19 @@ getMetaData:
                 type: array
                 items:
                   type: number
+            example:
+              fileIds:
+                - 10
+                - 11
+                - 41
+              folderIds:
+                - 2
+                - 3
     responses:
       '200':
-        description: returns the file and / or folder objects containing all the metadata
+        description: >-
+          Returns the file and / or folder objects holding all the necessary
+          metadata.
         content:
           application/json:
             schema:
@@ -27,8 +38,8 @@ getMetaData:
                 files:
                   type: array
                   items:
-                    $ref: '/file-bundle-api/openapi/entities.yaml#/file'
+                    $ref: '/file-bundle-api/openapi/schemas.yaml#/file'
                 folders:
                   type: array
                   items:
-                    $ref: '/file-bundle-api/openapi/entities.yaml#/folder'
+                    $ref: '/file-bundle-api/openapi/schemas.yaml#/folder'

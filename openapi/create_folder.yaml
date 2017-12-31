@@ -1,7 +1,7 @@
 createFolderInRootFolder:
   post:
     operationId: createFolderInRootFolder
-    description: create a new folder in the root folder
+    description: Creates a new folder in the root folder.
     requestBody:
       $ref: '#/components/requestBodies/createFolder'
     responses:
@@ -12,12 +12,12 @@ createFolderInFolderById:
     - name: id
       in: path
       required: true
-      description: the id of the parent folder of the new folder
+      description: The id of the parent folder of the new folder.
       schema:
         type: string
   post:
     operationId: createFolder
-    description: create a new folder
+    description: Creates a new folder inside the folder whose id is provided in the url.
     requestBody:
       $ref: '#/components/requestBodies/createFolder'
     responses:
@@ -26,7 +26,7 @@ createFolderInFolderById:
 components:
   requestBodies:
     createFolder:
-      description: the name of the new folder
+      description: The name of the new folder.
       content:
         application/x-www-form-urlencoded:
           schema:
@@ -35,7 +35,9 @@ components:
                 type: string
   responses:
     createFolder:
-      description: the new folder object
+      description: >-
+        The new folder object and an array containing zero or more validation
+        errors.
       content:
         application/json:
           schema:
@@ -46,4 +48,4 @@ components:
                 items:
                   type: string
               new_folder:
-                $ref: '/file-bundle-api/openapi/entities.yaml#/folder'
+                $ref: '/file-bundle-api/openapi/schemas.yaml#/folder'

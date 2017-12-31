@@ -3,13 +3,14 @@ renameFolderById:
     - name: id
       in: path
       required: true
-      description: the id of the folder to be renamed
+      description: The id of the folder to be renamed.
       schema:
         type: string
   put:
     operationId: renameFolderById
-    description: renames the folder with the specified id
+    description: Renames the folder with the specified id.
     requestBody:
+      description: The new name of the folder.
       content:
         application/x-www-form-urlencoded:
           schema:
@@ -20,8 +21,8 @@ renameFolderById:
     responses:
       '200':
         description: >-
-          array containing error messages; if an empty array is passed, the
-          renaming operation has been successful
+          Array containing validation error messages; if an empty array is
+          passed, the renaming operation has been successful.
         content:
           application/json:
             schema:

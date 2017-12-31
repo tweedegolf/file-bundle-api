@@ -1,23 +1,32 @@
 moveToRootFolder:
   post:
     operationId: moveItemsToRootFolder
-    description: moves items (files and/or folders) to the root folder
+    description: Moves items (files and/or folders) to the root folder.
     requestBody:
       $ref: '#components/requestBodies/move'
     responses:
-      '200':
-        $ref: '#/components/responses/move'
+      $ref: '#/components/responses/move'
 moveToFolderById:
   parameters:
     - name: id
       in: path
       required: true
-      description: the id of the folder to move the files to
+      description: >-
+        The id of the folder where the items (files and/or folders) will be
+        moved to.
       schema:
         type: string
     - in: formData
       name: fileIds
-      description: file name to upload
+      description: Array containing the ids of the files to be moved.
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+    - in: formData
+      name: folderIds
+      description: Array containing the ids of the folders to be moved.
       required: false
       schema:
         type: array
@@ -25,17 +34,20 @@ moveToFolderById:
           type: string
   post:
     operationId: moveItemsToFolderById
-    description: moves
+    description: >-
+      Moves items (files and/or folders) to the folder whose id is provided in
+      the url.
     requestBody:
       $ref: '#components/requestBodies/move'
     responses:
-      '200':
-        $ref: '#/components/responses/move'
+      $ref: '#/components/responses/move'
 components:
   responses:
     move:
       '200':
-        description: the ids of the items that raised errors while moving will be returned
+        description: >-
+          The ids of the items that raised errors while moving will be returned
+          and an error message indicating what went wrong.
         content:
           application/json:
             schema:
