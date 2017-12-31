@@ -54,4 +54,4 @@ components:
               uploads:
                 type: array
                 items:
-                  $ref: '/openapi/entities.yaml#/file'
+                  $ref: '/file-bundle-api/openapi/entities.yaml#/file'

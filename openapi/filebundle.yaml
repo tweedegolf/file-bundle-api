@@ -18,28 +18,28 @@ tags:
     description: Operations available to regular developers
 paths:
   /admin/file/list:
-    $ref: '/openapi/list_folder.yaml#/listRootFolder'
+    $ref: '/file-bundle-api/openapi/list_folder.yaml#/listRootFolder'
   '/admin/file/list/{id}':
-    $ref: '/openapi/list_folder.yaml#/listFolderById'
+    $ref: '/file-bundle-api/openapi/list_folder.yaml#/listFolderById'
   /admin/file/move:
-    $ref: '/openapi/move_items.yaml#/moveToRootFolder'
+    $ref: '/file-bundle-api/openapi/move_items.yaml#/moveToRootFolder'
   '/admin/file/move/{id}':
-    $ref: '/openapi/move_items.yaml#/moveToFolderById'
+    $ref: '/file-bundle-api/openapi/move_items.yaml#/moveToFolderById'
   /admin/file/create/folder:
-    $ref: '/openapi/create_folder.yaml#/createFolderInRootFolder'
+    $ref: '/file-bundle-api/openapi/create_folder.yaml#/createFolderInRootFolder'
   '/admin/file/create/folder/{id}':
-    $ref: '/openapi/create_folder.yaml#/createFolderInFolderById'
+    $ref: '/file-bundle-api/openapi/create_folder.yaml#/createFolderInFolderById'
   /admin/file/upload:
-    $ref: '/openapi/upload.yaml#/uploadToRootFolder'
+    $ref: '/file-bundle-api/openapi/upload.yaml#/uploadToRootFolder'
   '/admin/file/upload/{id}':
-    $ref: '/openapi/upload.yaml#/uploadToFolderById'
+    $ref: '/file-bundle-api/openapi/upload.yaml#/uploadToFolderById'
   '/admin/file/delete/{id}':
-    $ref: '/openapi/delete.yaml#/deleteFileById'
+    $ref: '/file-bundle-api/openapi/delete.yaml#/deleteFileById'
   '/admin/file/delete/folder/{id}':
-    $ref: '/openapi/delete.yaml#/deleteFolderById'
+    $ref: '/file-bundle-api/openapi/delete.yaml#/deleteFolderById'
   '/admin/file/rename/folder/{id}':
-    $ref: '/openapi/rename_folder.yaml#/renameFolderById'
+    $ref: '/file-bundle-api/openapi/rename_folder.yaml#/renameFolderById'
   /admin/file/metadata:
-    $ref: '/openapi/metadata.yaml#/getMetaData'
+    $ref: '/file-bundle-api/openapi/metadata.yaml#/getMetaData'
   /admin/file/recycle_bin/empty:
-    $ref: /openapi/empty_recyclebin.yaml
+    $ref: /file-bundle-api/openapi/empty_recyclebin.yaml

@@ -27,8 +27,8 @@ getMetaData:
                 files:
                   type: array
                   items:
-                    $ref: '/openapi/entities.yaml#/file'
+                    $ref: '/file-bundle-api/openapi/entities.yaml#/file'
                 folders:
                   type: array
                   items:
-                    $ref: '/openapi/entities.yaml#/folder'
+                    $ref: '/file-bundle-api/openapi/entities.yaml#/folder'
