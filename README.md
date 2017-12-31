@@ -1,6 +1,6 @@
 # file-bundle-api
 
-The [openapi 3.0](https://swagger.io/specification/) specification of the [file-bundle](https://github.com/tweedegolf/file-bundle).
+The [Open API 3.0.0](https://swagger.io/specification/) description of the [file-bundle](https://github.com/tweedegolf/file-bundle) API.
 
 Live version using [Swagger.ui](https://swagger.io/swagger-ui/) can be found [here](https://tweedegolf.github.io/file-bundle-api/).
 
